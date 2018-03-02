@@ -19,7 +19,8 @@ var word2
 var word1Score = 0;
 var word2Score = 0;
 
-
+var newWord = "ab"
+console.log("newWord:", newWord.charCodeAt(1))
 
 var array = string.split(' ');
 console.log(array);
@@ -30,19 +31,35 @@ console.log(word1[0]);
 
 
 for(var i = 0; i < word1.length; i++){
-    var wordCode = word1.charCodeAt(i);
-    var letterNumber = wordCode - 96;
-    word1Score += letterNumber;
+    var wordCode = (word1.charCodeAt(i)) - 96;
+    word1Score += wordCode;
 }
 
 console.log("word1Score: ", word1Score);
 
 for(var i = 0; i < word2.length; i++){
-    var wordCode = word2.charCodeAt(i);
-    var letterNumber = wordCode - 96;
-    word2Score += letterNumber;
+    var wordCode = (word2.charCodeAt(i)) - 96;
+    word2Score += wordCode;
 }
 
+
+
+
+
+
+
+
+
 console.log("word2Score: ", word2Score);
+if (word1Score > word2Score) {
+    var winner = document.getElementById('challenge-1');
+    winner.innerHTML = "<h1>" + word1 + "</h1>";
+} else if (word1Score === word2Score){
+    var winner = document.getElementById('challenge-1');
+    winner.innerHTML = "<h1>" + word1 + "</h1>";
+} else {
+    var winner = document.getElementById('challenge-1');
+    winner.innerHTML = "<h1>" + word2 + "</h1>";
+}
 
 
