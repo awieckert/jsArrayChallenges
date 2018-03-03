@@ -13,36 +13,31 @@ console.log("Index is Linked");
 
 
 var letterNumbers = function (value) {
+
     var array = value.split(' ');
-    var word1 = array[0];
-    var word2 = array[1];
-    var word1Score = 0;
-    var word2Score = 0;
+    var heighestScore = 0;
+    var heighestScoringWord = [];
 
-    for(var i = 0; i < word1.length; i++){
-        var wordCode = (word1.charCodeAt(i)) - 96;
-        word1Score += wordCode;
+    for(var i = 0; i < array.length; i++){
+        var currentWord = array[i];
+        var currentWordScore = 0;
+
+        for(var j = 0; j < currentWord.length; j++){
+            var letterScore = (currentWord.charCodeAt(j)) - 96;
+            currentWordScore += letterScore;
+        }
+        
+        if (currentWordScore > heighestScore){
+            heighestScore = currentWordScore;
+            heighestScoringWord = array[i];
+        }
     }
 
-    for(var i = 0; i < word2.length; i++){
-        var wordCode = (word2.charCodeAt(i)) - 96;
-        word2Score += wordCode;
-    }
-
-    if (word1Score > word2Score) {
         var winner = document.getElementById('challenge-1');
-        winner.innerHTML = "<h1>" + word1 + "</h1>";
-    } else if (word1Score === word2Score){
-        var winner = document.getElementById('challenge-1');
-        winner.innerHTML = "<h1>" + word1 + "</h1>";
-    } else {
-        var winner = document.getElementById('challenge-1');
-        winner.innerHTML = "<h1>" + word2 + "</h1>";
-    }
-
+        winner.innerHTML = "<h1>The Heighest Scoring Word is: " + heighestScoringWord + "</h1>" + "<h1>With a Score of: " + heighestScore + "!</h1>";
 }
 
-letterNumbers("adam shrimpzzz");
+letterNumbers("adam shrimpzzz zztopzzzzzzzzzzzz");
 
 
 // Challenge 1 END!
