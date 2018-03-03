@@ -44,6 +44,25 @@ letterNumbers("adam shrimpzzz zztopzzzzzzzzzzzz");
 
 
 // Challenge 2 Start!
+// Change any 3's to 7's and 7's to 3's
+
+var challengeTwoInputA = [1,2,3,4,5,6,7,8,9];  //[1,2,7,4,5,6,3,8,9];
+var lastIndexOf3 = -1;
+var indicesOf3 = [];
+for(var i = 0; i < challengeTwoInputA.length; i++){
+    var grabIndice = challengeTwoInputA.indexOf(3, (lastIndexOf3) + 1);
+    console.log("grabIndice before if: ",grabIndice);
+    if(grabIndice != -1){
+        indicesOf3.push(grabIndice);
+        lastIndexOf3 = grabIndice; 
+    }
+}
+console.log(indicesOf3);
+console.log(lastIndexOf3);
+
+
+// var test = challengeTwoInputA.indexOf(3, 3);
+// console.log("Test: ", test);
 
 
 
