@@ -80,14 +80,14 @@ var test4 = [1,2,3,4]; // 5
 
 function mathStuffs(testArray){
     var correctArrayLength = (testArray.length) + 1;
-    var currectSum = (correctArrayLength * (correctArrayLength + 1)) / 2;
+    var correctSum = (correctArrayLength * (correctArrayLength + 1)) / 2;
    
     var testArraySum = 0;
     for(var i = 0; i < testArray.length; i++){
         testArraySum += testArray[i];
     }
 
-    var missingNumber = currectSum - testArraySum;
+    var missingNumber = correctSum - testArraySum;
     var printDiv = document.getElementById('challenge-6');
     printDiv.innerHTML += "<h1>The missing number is: " + missingNumber + "</h1>"
 }
