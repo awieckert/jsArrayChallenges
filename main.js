@@ -51,23 +51,32 @@ letterNumbers("adam shrimpzzz zztopzzzzzzzzzzzz");
 // Challenge 2 Start!
 // Change any 3's to 7's and 7's to 3's
 
-var challengeTwoInputA = [1,2,3,4,5,6,7,8,9];  //[1,2,7,4,5,6,3,8,9];
-var lastIndexOf3 = -1;
-var indicesOf3 = [];
-for(var i = 0; i < challengeTwoInputA.length; i++){
-    var grabIndice = challengeTwoInputA.indexOf(3, (lastIndexOf3) + 1);
-    console.log("grabIndice before if: ",grabIndice);
-    if(grabIndice != -1){
-        indicesOf3.push(grabIndice);
-        lastIndexOf3 = grabIndice; 
+// var challengeTwoInputA = [1,2,3,4,5,6,7,8,9];  //[1,2,7,4,5,6,3,8,9];
+
+
+
+// Challenge-3 Start-----!
+
+// var challengeThreeInputA = [ 1, 1, 1, 2, 1, 1 ];  // 2
+var challengeThreeInputB = [ 0, 0, 0, 0, 0, 0, 0, 0.55, 0, 0 ];
+
+function uniqueNum (nums){
+    var placeHolder = nums;
+    for(var i = 0; i < placeHolder.length; i++){
+        var currentIndex = placeHolder[i];
+        for(var k = i + 1; k < placeHolder.length; k++){
+            if(currentIndex === placeHolder[k]){
+                placeHolder.splice(k, 1);
+                k--;
+            }
+        }
     }
+    console.log("Nums: ", nums);
 }
-console.log(indicesOf3);
-console.log(lastIndexOf3);
 
+uniqueNum(challengeThreeInputB);
 
-// var test = challengeTwoInputA.indexOf(3, 3);
-// console.log("Test: ", test);
+// Challenge-3 END ------!
 
 
 
