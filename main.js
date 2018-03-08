@@ -83,6 +83,11 @@ function uniqueNum (arrayToSum){
 
 uniqueNum(challengeThreeInputB);
 
+
+function uniqueNum2(array1){
+    return array1.filter(words => indexOf())
+}
+
 // Challenge-3 END ------!
 
 
