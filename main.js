@@ -60,18 +60,25 @@ letterNumbers("adam shrimpzzz zztopzzzzzzzzzzzz");
 // var challengeThreeInputA = [ 1, 1, 1, 2, 1, 1 ];  // 2
 var challengeThreeInputB = [ 0, 0, 0, 0, 0, 0, 0, 0.55, 0, 0 ];
 
-function uniqueNum (nums){
-    var placeHolder = nums;
-    for(var i = 0; i < placeHolder.length; i++){
-        var currentIndex = placeHolder[i];
-        for(var k = i + 1; k < placeHolder.length; k++){
-            if(currentIndex === placeHolder[k]){
-                placeHolder.splice(k, 1);
-                k--;
-            }
+function uniqueNum (arrayToSum){
+    var arrayToUse = arrayToSum;
+
+    for(var i = 0; i < arrayToUse.length; i++){
+        var currentIndex = arrayToUse[i];
+            for(var j = i + 1; j < arrayToUse.length; j++) {
+                if(currentIndex === arrayToUse[j]){
+                arrayToUse.splice(j, 1);
+                j--;
+            } 
         }
     }
-    console.log("Nums: ", nums);
+    if(arrayToUse[0] !== arrayToUse[1]){
+        arrayToUse.splice(0,1);
+    }
+
+    var stringToPrint = "<h1>The Unique Value is: " + arrayToUse + "</h1>"
+    console.log("Nums: ", arrayToUse);
+    document.getElementById("challenge-3").innerHTML = stringToPrint;
 }
 
 uniqueNum(challengeThreeInputB);
